@@ -1,4 +1,4 @@
-UMI-ARX Cup Task Deployment Tutorial
+# UMI-ARX Cup Task Deployment Tutorial
 
 # Diffusion Policy Setup
 Please follow the instructions in [README_original.md] to install the environment
