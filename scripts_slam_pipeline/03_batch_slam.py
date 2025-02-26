@@ -43,7 +43,7 @@ def runner(cmd, cwd, stdout_path, stderr_path, timeout, **kwargs):
 @click.option('-n', '--num_workers', type=int, default=None)
 @click.option('-ml', '--max_lost_frames', type=int, default=60)
 @click.option('-tm', '--timeout_multiple', type=float, default=16, help='timeout_multiple * duration = timeout')
-@click.option('-np', '--no_docker_pull', is_flag=True, default=False, help="pull docker image from docker hub")
+@click.option('-np', '--no_docker_pull', is_flag=True, default=True, help="pull docker image from docker hub")
 def main(input_dir, map_path, docker_image, num_workers, max_lost_frames, timeout_multiple, no_docker_pull):
     input_dir = pathlib.Path(os.path.expanduser(input_dir)).absolute()
     input_video_dirs = [x.parent for x in input_dir.glob('demo*/raw_video.mp4')]

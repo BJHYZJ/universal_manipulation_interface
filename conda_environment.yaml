@@ -2,6 +2,7 @@ name: umi
 channels:
   - pytorch
   - nvidia
+  - robostack-staging
   - conda-forge
 dependencies:
   - python=3.9
@@ -40,6 +41,28 @@ dependencies:
   - exiftool=12
   - aiohttp=3.9
   - aiofiles=23.2
+
+  ################ for arx5 ################
+  - ros-noetic-kdl-parser
+  - cxx-compiler
+  - cmake
+  - ninja
+  - orocos-kdl
+  - eigen
+  - boost
+  - spdlog
+  - pybind11
+  - click
+  - pyzmq
+  - conda-forge::soem  # This package is missing in aarch64
+  # To install it on aarch64 (arm64), comment out this package and first create the arx-py39 environment.
+  # Directly clone the SOEM repository and install it to the conda environment (ensure $CONDA_PREFIX points to arx-py39):
+  # `conda activate arx-py39`
+  # `git clone https://github.com/OpenEtherCATsociety/SOEM.git && cd SOEM`
+  # `mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX .. && make -j && make install`
+  ################ for arx5 ################
+  - libopencv
+
   - pip:
     - ray[default]==2.8.0
     - threadpoolctl==3.2
